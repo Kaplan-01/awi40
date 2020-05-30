@@ -8,4 +8,4 @@
 """
 
 print("Hello World!\n")
-print("This is the first time in Repl.it.")
+print("This is the first time in Repl.it. \n Practice!")
