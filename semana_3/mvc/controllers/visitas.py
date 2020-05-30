@@ -3,39 +3,39 @@
     ACCOUNT: 1718110389
     GROUP: TIC 51
     DATE: 30-05-2020
-    DESCRIPTION: Creacion de cookies con nombre, numero de visitas, fecha, y hora del visitante. 
+    DESCRIPTION: Creación de cookies con nombre, número de visitas, fecha, y hora del visitante. 
     En caso de que no haya nombre como respuesta del usuario se marcara como 'Anónimo'.
 """
 
-import web # Libreria de web.py
-import datetime # Libreria para manipulacion de fecha y tiempo.
+import web # Librería de web.py
+import datetime # Librería para manipulación de fecha y tiempo.
 
 class Visitas:
     def GET(self, name):
       try:
-        # Admistracion Cookies
+        # Administración Cookies
         cookie = web.cookies()
         visitas = "0"
         print(cookie)
 
-        # Creacion de variables para manejo accesible del tiempo.
+        # Creación de variables para manejo accesible del tiempo.
         date = datetime.datetime.now()
         dateV = date.strftime('%a, %d-%m-%Y') # Estructura. (Dia de la semana, dia en numero-mes-año)
         hourV = date.strftime('%H:%M:%S') # Estructura. (Hora:Mes:Segundos)
 
-        # Date - Visitor
+        # Date - Visitor.
         if dateV:
           web.setcookie("dateV", dateV, expires="", domain=None)
         else:
           web.setcookie("dateV", dateV, expires ="", domain=None)
 
-        # Hour - Visitor
+        # Hour - Visitor.
         if hourV:
           web.setcookie("hourV", hourV, expires="", domain=None)
         else:
           web.setcookie("hourV", hourV, expires ="", domain=None)
 
-        # Name - Visitor
+        # Name - Visitor.
         if name:
           web.setcookie("nombre", name, expires="", domain=None)
         else:
