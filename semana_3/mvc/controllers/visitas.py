@@ -3,7 +3,8 @@
     ACCOUNT: 1718110389
     GROUP: TIC 51
     DATE: 30-05-2020
-    DESCRIPTION: Creacion de cookies con nombre, numero de visitas, fecha, y hora del visitante. En caso de que no haya nombre como respuesta del usuario se marcara como 'Anónimo'.
+    DESCRIPTION: Creacion de cookies con nombre, numero de visitas, fecha, y hora del visitante. 
+    En caso de que no haya nombre como respuesta del usuario se marcara como 'Anónimo'.
 """
 
 import web # Libreria de web.py
@@ -37,7 +38,6 @@ class Visitas:
         # Name - Visitor
         if name:
           web.setcookie("nombre", name, expires="", domain=None)
-
         else:
           name="Anónimo" # Asignacion en caso de que no haya un nombre introducido por un usuario.
           web.setcookie("nombre", name, expires ="", domain=None)
